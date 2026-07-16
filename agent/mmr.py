@@ -1,4 +1,4 @@
-"""Maximal Marginal Relevance (MMR) reranking — real implementation.
+"""Maximal Marginal Relevance (MMR) reranking - real implementation.
 
 score(d) = lambda * relevance(d) - (1 - lambda) * max_{s in selected} sim(d, s)
 

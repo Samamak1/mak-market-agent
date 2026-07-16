@@ -2,7 +2,7 @@
 
 Market research agent with hybrid retrieval done properly: BM25 + TF-IDF
 cosine score fusion, a real (implemented and unit-tested) MMR reranker,
-deterministic extractive answers, and a FastAPI service — over a bundled,
+deterministic extractive answers, and a FastAPI service - over a bundled,
 original explainer corpus.
 
 Author: Sama Mushtaq
@@ -35,7 +35,7 @@ strictly opt-in and only activates when an `ANTHROPIC_API_KEY` or
         | lexical scoring |                  | (hand-rolled,   |
         +--------+--------+                  |  L2-normalized) |
                  |                           +--------+--------+
-                 +---------—--+  +--------------------+
+                 +------------+  +--------------------+
                               |  |
                       +-------v--v--------+
                       | score fusion      |   fused = a*minmax(bm25)
@@ -88,8 +88,8 @@ the retrieved passages.
 
 **The MMR test is the point of this repo.** MMR here is implemented and
 tested, not a placeholder. `tests/test_mmr.py` uses a three-document
-fixture small enough to verify on paper — two identical vectors and one
-orthogonal vector — and asserts the exact selection order `[0, 2, 1]`
+fixture small enough to verify on paper - two identical vectors and one
+orthogonal vector - and asserts the exact selection order `[0, 2, 1]`
 at lambda 0.5: the duplicate of an already-selected document is demoted
 below a less relevant but diverse document, which is the entire reason
 MMR exists.
